@@ -2,15 +2,22 @@
  * Written by Josh Grooms on 20151201
  */
 
- @import "./ColorNames"
+@import "./ColorNames";
 
-@background-color:  @light-black;
 
-@cursor-color:      @vibrant-blue;
 
-@selection-color:   @silver;
+@background-color:                          @light-black;
+@cursor-color:                              @vibrant-blue;
+@selection-color:                           @silver;
+@text-color:                                @vibrant-blue;
+@text-color-folded:                         @light-gray;
+@text-color-selected:                       @very-dark-gray;
+@text-color-unknown:                        @very-dark-gray;
 
-@text-color:        @vibrant-blue;
+@line-number-background-color:              @dark-gray;
+@line-number-background-color-selected:     @very-dark-gray;
+@line-number-text-color:                    @light-silver;
+@line-number-text-color-selected:           @deep-blue;
 
 
 
@@ -46,6 +53,15 @@
 @method-color:          @vibrant-blue;
 @operator-color:        @green;
 @preprocessor-color:    @very-light-silver;
+@wrap-color:            @very-dark-gray;
 
 @error-color:           @red;
 @warning-color:         @copper;
+
+
+
+/** VERSION CONTROL COLORS **/
+@version-added:         @forest-green;
+@version-modified:      @copper;
+@version-removed:       @maroon;
+@version-renamed:       @deep-blue;
