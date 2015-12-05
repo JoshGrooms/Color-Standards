@@ -2,6 +2,8 @@
  * Written by Josh Grooms on 20151205
  */
 
+@import './Functions';
+
 
 
 /** GRAYSCALE COLORS **/
@@ -64,3 +66,11 @@ Orchid             = #9632FF;    // [150,  50, 255]
 Slate              = #647D96;    // [100, 125, 150]
 SpringGreen        = #00C864;    // [  0, 200, 100]
 Turquoise          = #00C8AF;    // [  0, 200, 175]
+
+
+
+/** GRADIENT DEFINITIONS **/
+SilverGradient                      = gradient(shade(Silver, lighter), shade(Silver, darker));
+SilverGradientInverse               = gradient(shade(Silver, darker), shade(Silver, lighter));
+VibrantBlueGradient                 = gradient(shade(VibrantBlue, lighter), shade(VibrantBlue, darker));
+VibrantBlueGradientInverse          = gradient(shade(VibrantBlue, darker), shade(VibrantBlue, lighter));
