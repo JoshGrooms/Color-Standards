@@ -13,11 +13,29 @@
 gradient(topColor, bottomColor)
     vgradient(topColor, bottomColor);
 
-hgradient(leftColor, rightColor)
-    -gtk-gradient(linear, left top, right top, from(leftColor), to(rightColor));
+hgradient(leftColor, rightColor = none)
+    if (rightColor == none)
+        -gtk-gradient(linear, left top, right top, from(shade(leftColor, lighter)), to(shade(leftColor, darker)));
+    else
+        -gtk-gradient(linear, left top, right top, from(leftColor), to(rightColor));
 
-vgradient(topColor, bottomColor)
-    -gtk-gradient(linear, left top, left bottom, from(topColor), to(bottomColor));
+rgradient(innerColor, outerColor = none)
+    if (outerColor == none)
+        innerColor = shade(innerColor, lighter);
+        outerColor = shade(innerColor, darker);
+
+    -gtk-gradient(
+        radial,
+        0.375 0.375, 0,
+        0.5 0.5, 1,
+        from(innerColor),
+        to(outerColor));
+        
+vgradient(topColor, bottomColor = none)
+    if (bottomColor == none)
+        -gtk-gradient(linear, left top, left bottom, from(shade(topColor, lighter)), to(shade(topColor, darker)));
+    else
+        -gtk-gradient(linear, left top, left bottom, from(topColor), to(bottomColor));
 
 
 
