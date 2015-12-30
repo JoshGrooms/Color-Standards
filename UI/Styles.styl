@@ -18,7 +18,7 @@ debug()
 deep-inset()
     bevel:              1px inset normal;
     background-color:   shadow-color(light, faded);
-    box-shadow:         inset 1px 2px 3px shadow-color(normal, semifaded);
+    box-shadow:         inset 0.5px 1px 2px shadow-color(normal, normal);
 /* DEEPER-INSET - Styles elements to appear as if they were very deeply sunken into their parent container. */
 deeper-inset()
     bevel:              1px inset normal;
@@ -29,7 +29,7 @@ deep-outset()
     bevel:              1px outset lighter;
     background-color:   gloss-color(normal, normal);
     box-shadow:         0px 0px 0px 1px shadow-color(lighter, semiopaque),
-                        3px 3px 5px shadow-color(normal, normal);
+                        3px 3px 5px shadow-color(normal, faded);
 /* FLAT - Styles elements to appear completely flat and merged with their parent container. */
 flat()
     background-color:   transparent;
@@ -69,25 +69,6 @@ shallow-inset()
 shallow-outset()
     bevel:              1px outset gloss-color(normal, faded) shadow-color(lighter, semifaded);
     background-color:   gloss-color(darker, faded);
-
-/* BUTTON-TEXT-COLOR - Sets parameters controlling the color of text and colorized images that are children of buttons.
- *
- *  SYNTAX:
- *      button-text-color:  c
- *
- *  INPUT:
- *      c:      RGBA
- *              The desired color of button text and colorized images.
- */
-button-text-color(c)
-    color:              c;
-    & GtkBox GtkImage,
-    & GtkBox GtkLabel,
-    > GtkImage,
-    > GtkLabel
-        color:          c;
-
-
 
 /* BEVEL - Sets border parameters to resemble an inset or outset bevel.
  *
@@ -147,6 +128,7 @@ button-text-color(c)
  *                          element that is being styled.
  */
 bevel(size, direction = outset, strength = normal, opacity = semitransparent)
+
     if (iscolor(strength))
         c1 = strength;
         c2 = opacity;
